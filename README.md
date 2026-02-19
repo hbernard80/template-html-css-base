@@ -19,6 +19,6 @@
 
 ## 🟠 Points non implémentés
 
-* Minification et préchargement des feuilles de styles et du fichier Javascript.
+* Externalisation, minification et préchargement des feuilles de styles et du fichier Javascript.
 * Accessibilité non auditée (mais prévu).
 * Quelques soucis de débordement (overflow) à inspecter , mais aucun scroll horizontal.
