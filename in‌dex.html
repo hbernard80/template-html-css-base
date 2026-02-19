@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Template HTML-CSS grid + flex</title>
+    <meta name="description" content="Template HTML-CSS grid + flex">
+    <meta name="robots" content="none">
+    <meta name="referrer" content="no-referrer">
+    <link rel="preload" href="public/assets/css/app.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="public/assets/css/app.css"></noscript>
+    <link rel="preload" as="image" href="public/images/x.webp">
+    <link href="public/assets/css/print.css" rel="stylesheet" media="print">    
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon.png"> 
+  </head>
+  <body>
+  <header id="site-header">
+  <div class="header-top">
+     <a href="/" class="site-title">Template HTML-CSS grid + flex</a>
+  </div>
+  <nav id="navbar-main" aria-label="Navigation principale">
+	  <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="navbar-main-list" aria-expanded="false">
+		<span class="nav-toggle__icon" aria-hidden="true"></span>
+		<span class="nav-toggle__label">Menu</span>
+	  </button>
+	  <ul id="navbar-main-list" hidden>
+		<li><a href="/">Accueil</a></li>
+		<li><a href="/page1.html">Page 1</a></li>
+		<li><a href="/page2.html">Page 2</a></li>
+		<li><a href="/page3.html">Page 3</a></li>
+	  </ul>
+</nav>
+</header>
+<nav id="breadcrumb" aria-label="Fil d'Ariane">
+	  <ol>
+	  <!-- La détermination de la page courante doit être dynamique (via un langage côté serveur : PHP etc.) -->
+		<li><a href="/">Accueil</a></li>
+		<li aria-current="page">Page 1</li>		
+	  </ol>
+	</nav> 
+<div id="page">   	
+    <main class="content">
+		<h1>Titre de la page (h1)</h1>
+		<article>
+			  <h2>Titre de l'article (h2)</h2>
+			 <p>Suspendisse potenti. Quisque imperdiet condimentum rutrum. Maecenas at leo sit amet purus molestie molestie nec sit amet ligula. Aenean nec interdum ante. Ut vitae ipsum nisl. In hac habitasse platea dictumst. 
+			 Proin mauris neque, mattis ac magna ut, efficitur condimentum neque. Cras sit amet sapien et lorem hendrerit rhoncus. Morbi volutpat non orci vitae accumsan. Praesent eget est tempor, lobortis arcu eu, faucibus erat. 
+			 Donec dignissim non felis at varius. In dignissim eu ex vel imperdiet. Sed eget iaculis mi.</p>
+			 
+			<p>Aliquam elit elit, lobortis ut facilisis sed, varius sit amet metus. Etiam a nisi ac neque porttitor lobortis. Maecenas laoreet elit a nisi ultrices, at fringilla nunc vulputate. Aliquam condimentum, tortor in 
+			imperdiet ullamcorper, lorem magna venenatis nibh, vel faucibus purus nulla at ex. Praesent eu lacus purus. Duis convallis massa vitae nisi pellentesque, ac egestas arcu suscipit. Cras imperdiet purus purus, et 
+			hendrerit mi bibendum sit amet. Fusce maximus porta sapien ac lobortis. Cras consectetur turpis volutpat massa faucibus, vitae dictum urna elementum.</p>
+			
+			<p>Sed sit amet feugiat risus, commodo porttitor felis. Morbi suscipit metus lectus, vel elementum orci pellentesque non. Donec aliquet, orci euismod dignissim euismod, arcu velit molestie tellus, vel mollis velit
+			urna quis ipsum. Ut suscipit eleifend lorem, vel fermentum nisl placerat id. Nunc mattis semper facilisis. Vivamus at augue et lorem sollicitudin egestas. Aliquam finibus nibh convallis augue tincidunt aliquam. 
+			Sed mattis dui enim, euismod congue tellus egestas sed. Suspendisse potenti. Vestibulum accumsan dictum faucibus. Donec maximus id nibh ut sollicitudin. Aliquam vehicula, urna id luctus tempus, enim massa maximus odio, 
+			nec feugiat lacus leo vel augue. Etiam ut nulla sagittis justo ullamcorper aliquam sit amet vitae urna. Nullam ullamcorper pulvinar magna, et interdum odio fermentum quis. Vestibulum vel pretium est. Proin blandit neque a finibus dapibus.</p>
+
+			<p>In egestas nibh ipsum, vel pharetra nulla imperdiet at. Aenean vel pulvinar erat, sed elementum enim. Donec molestie efficitur dolor vitae pretium. Proin quis est quis ipsum aliquet consequat. In imperdiet mattis
+			justo, vel gravida metus. Aenean aliquam felis ac scelerisque mattis. Nullam accumsan mollis dolor vel suscipit. Etiam ullamcorper hendrerit vestibulum. Curabitur non tortor ac sem egestas luctus et in nulla. Nunc eros
+			quam, pulvinar ac fringilla vitae, ornare lacinia mi. Donec at tincidunt augue. Phasellus odio sem, mollis eget malesuada in, bibendum ut tellus. Donec viverra egestas nibh at sagittis. Etiam erat ligula, tincidunt vel 
+			porttitor id, lobortis sed nisi.</p>
+		</article>
+    </main>
+
+    <aside id="sidebar">
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rutrum mauris ac ornare vestibulum. Fusce ornare eget enim in semper. Suspendisse nunc lectus, tempus sollicitudin orci in, convallis imperdiet ipsum. Phasellus 
+	   ultricies nulla quis felis vestibulum, vel pellentesque quam viverra.</p>
+	  
+       <p>Proin scelerisque facilisis ex sed pulvinar. Integer viverra augue nisl, id blandit neque scelerisque nec. Sed imperdiet viverra semper. Mauris quam urna, laoreet eget consectetur nec, laoreet sit amet magna. Donec in risus semper,
+	   ullamcorper nunc vitae, hendrerit ante. Cras blandit hendrerit velit et mattis. Aenean laoreet convallis cursus. Nullam tincidunt, nulla sed eleifend ornare, tellus quam luctus libero, eu lacinia nisi ante ac turpis.</p>
+   </aside>
+</div> <!-- .page -->
+
+<footer id="site-footer">
+  <div id="footer-inner">
+    <p>&copy; 2026 ABC SARL</p>
+    <p><a href="mentions-legales.html">Mentions légales</a></p>
+  </div>
+</footer>
+<script src="public/assets/js/app.js" defer></script>
+</body>
+</html>

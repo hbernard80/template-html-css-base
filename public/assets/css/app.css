@@ -1,0 +1,290 @@
+/* -- Variables utiles -------------------------- */
+:root {
+  --gap: 16px;
+  --container: 1100px;
+  --nav-h: 44px; /* hauteur fixe navbar */
+  --color-theme: #c4e9ec; /* Seabreeze */
+  --color-theme-bg: #2d3480; /* Indigo */
+}
+
+/* -- Reset CSS --------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  line-height: 1.5;
+  font-family: Helvetica, sans-serif;
+}
+
+/* -- Layout global ----------------------------- */
+a {
+	color: var(--color-theme-bg); 
+}
+
+#site-header, #breadcrumb, #page {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gap);
+}
+
+/* -- Header top -------------------------------- */
+.header-top {
+  display: flex;
+  align-items: center;    
+  gap: 12px;
+  padding-block: 12px;
+}
+
+.site-title {
+  text-decoration: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-left: 1rem;
+  color: var(--color-theme-bg);
+}
+
+/* -- Navbar (mobile-first) --------------------- */
+/* Bouton (mobile) */
+.nav-toggle {
+  margin-right: var(--gap);
+  height: var(--nav-h);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  border: 0;
+  background: transparent;
+  color: var(--color-theme);
+  font: inherit;
+  cursor: pointer;
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Icône "hamburger" */
+.nav-toggle__icon {
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  position: relative;
+  display: inline-block;
+}
+
+.nav-toggle__icon::before,
+.nav-toggle__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+}
+
+.nav-toggle__icon::before { top: -7px; }
+.nav-toggle__icon::after  { top: 7px; }
+
+/* Label visible */
+.nav-toggle__label {
+  line-height: 1;
+}
+
+/* --- Navbar mobile-first : liste cachée, panneau déroulant -- */
+#navbar-main {
+  position: relative;
+  height: var(--nav-h);
+  background-color: var(--color-theme-bg); 
+  display: flex;
+  align-items: center;
+}
+
+/* En mobile, on veut un menu vertical */
+#navbar-main-list {
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;  
+
+  /* panneau */
+  position: absolute;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  background-color: var(--color-theme-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.15); 
+  z-index: 10;
+}
+
+/* Liens en mobile : zone cliquable confortable */
+#navbar-main-list a {
+  display: block;
+  padding: 12px var(--gap);
+  text-decoration: none;
+  color: var(--color-theme);
+}
+
+/* Etat ouvert/fermé piloté par JS via data-open */
+#navbar-main[data-open="true"] #navbar-main-list {
+  /* rien à faire : hidden sera retiré en JS */
+}
+
+#navbar-main-list[hidden] {
+  display: none !important;
+}
+
+/* Quand le menu est ouvert (hidden retiré par JS), on l'affiche */
+#navbar-main-list:not([hidden]) {
+  display: flex;
+}
+
+/* -- Fil d'ariane (breadcrumb) ----------------- */
+#breadcrumb {
+  font-size: 0.9rem;
+  margin-block: 12px;
+}
+
+#breadcrumb ol {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#breadcrumb li::after {
+  content: "›";
+  margin-left: 8px;
+}
+
+#breadcrumb li:last-child::after {
+  content: "";
+}
+
+/* -- Footer ------------------------------------ */
+#site-footer {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gap);
+  margin-bottom: var(--gap);
+}
+
+/* Le fond reste “dans le container” */
+#footer-inner {
+  min-height: var(--nav-h);
+  display: flex;
+  flex-direction: column; /* mobile */
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  background-color: var(--color-theme-bg);
+  color: var(--color-theme);
+}
+
+#footer-inner a {
+  color: var(--color-theme);
+}
+
+/* -- Page (Grid) : mobile = 1 colonne ---------- */
+#page {
+  display: grid;
+  grid-template-columns: 1fr; /* main au-dessus de aside */
+  gap: var(--gap);
+  padding-block: var(--gap);
+}
+
+/* -- Anti-débordement texte -------------------- */
+.content,
+.content * {
+  min-width: 0;
+}
+
+.content,
+.content p,
+.content h1,
+.content h2,
+.content a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* -- Sidebar masquée sur mobile ---------------- */
+#sidebar {
+   display: none;
+}
+
+/* -- Autres ------------------------------------ */
+h1, h2 {
+	  margin-bottom: var(--gap);
+}	
+
+
+h1 {
+	border-bottom: 1px solid var(--color-theme-bg);  
+}	
+
+/* ---------------------------------------------- 
+* MEDIA QUERIES 
+* ----------------------------------------------- 
+*/
+@media (min-width: 1025px) 
+{
+    #page {
+      grid-template-columns: 2fr 1fr; /* main + aside */
+      align-items: start;
+    }
+
+    /* -- navbar > 1025px ----------------------- */ 
+    .nav-toggle {
+      display: none;
+    }
+
+    #navbar-main-list {
+      position: static;
+      flex-direction: row;
+      gap: 18px;
+      padding: 0;
+      background: transparent;
+      border-top: 0;
+      z-index: auto;
+    }
+
+    #navbar-main-list {
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    #navbar-main-list a {
+      padding: 6px 12px;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    /* -- sidebar (aside) visible > 1025px ------ */ 
+    #sidebar {
+      display: block;
+      min-width: 0;
+      background-color: var(--color-theme);
+      padding: 15px; 
+    }
+    
+    /* Footer > 1025px -------------------------- */
+    #footer-inner {
+      flex-direction: row; /* éléments sur 1 seule ligne */
+      gap: var(--gap);
+    }
+} /* -- fin @media > 1025 ----------------------- */

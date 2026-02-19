@@ -1,0 +1,20 @@
+/* ---------------------------------------------- 
+* print.css 
+* ----------------------------------------------- 
+*/
+@page { 
+  margin: 0.5cm;
+}
+
+* {
+  font-family: "Century Gothic", Garamond, sans-serif;
+  color: #262626;
+}
+
+header, footer, .noprint {
+  display: none;
+}
+
+a[href]::after {
+  content: " (" attr(href) ")";
+}
