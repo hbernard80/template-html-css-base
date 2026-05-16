@@ -22,3 +22,5 @@
 * Externalisation, minification et préchargement des feuilles de styles et du fichier Javascript.
 * Accessibilité non auditée (mais prévu).
 * Quelques soucis de débordement (overflow) à inspecter , mais aucun scroll horizontal.
+
+![screenshot-01.png](screenshot-01.png)
